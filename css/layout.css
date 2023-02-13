@@ -6,11 +6,13 @@
   max-width: 575px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  background-color: #f7f7f7;
 }
 
 .row {
   display: flex;
   flex-wrap: wrap;
+  padding: 0.7rem;
 }
 
 .column-full,
@@ -34,14 +36,46 @@
 }
 
 #header-h2 {
-  background-color: blueviolet;
+  background-color: rgb(110, 27, 187);
   color: white;
+}
+
+h2 {
+  margin: 0;
+  padding: 10px;
+}
+
+h1 {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 img {
   width: 100%;
+  max-height: 300px;
+  object-fit: cover;
 }
 
-input {
+.input-field {
   width: 100%;
+  padding: 5px;
+}
+
+.submit-row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+  justify-content: end;
+}
+
+#submit-button {
+  display: flex;
+  justify-content: end;
+  background-color: rgb(110, 27, 187);
+  color: white;
+}
+
+div.header-img {
+  max-width: auto;
 }
