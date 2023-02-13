@@ -17,10 +17,10 @@
 </head>
 <body>
   <header>
+    <div class="row" id="header-h2">
+      <h2>Code Journal</h2>
+    </div>
     <div class="container">
-      <div class="row column-full" id="header-h2">
-        <h2>Code Journal</h2>
-      </div>
       <div class="row column-full" id="header-h1">
         <h1>New Entry</h1>
       </div>
@@ -30,7 +30,29 @@
     </div>
   </header>
   <main class="container">
-    <div data-view="entry-form"></div>
+    <div data-view="entry-form">
+      <form>
+        <div class="row">
+          <label for="title">Title</label>
+        </div>
+        <div class="row">
+          <input type="text" name="title" placeholder="Ada Lovelace" required>
+        </div>
+        <div class="row">
+          <label for="Photo-URL">Photo URL</label>
+        </div>
+        <div class="row">
+          <input type="text" name="photo" placeholder="http:miro.medium.com/max/1400/a.pn" required>
+        </div>
+        <div class="row">
+          <label for="notes">Notes</label>
+        </div>
+        <div class="row">
+          <input type="text" name="notes" placeholder="Notes Here" required>
+        </div>
+        <input type="submit" name="submit" value="Save">
+      </form>
+    </div>
     <div data-view="entries" class="hidden"></div>
   </main>
   <script src="js/data.js"></script>
