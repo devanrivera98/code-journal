@@ -32,3 +32,12 @@
     width: 50%;
   }
 }
+
+#header-h2 {
+  background-color: blueviolet;
+  color: white;
+}
+
+img {
+  width: 100%;
+}
