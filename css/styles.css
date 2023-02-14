@@ -1,4 +1,4 @@
-.container {
+.main {
   background-color: #f7f7f7;
 }
 
@@ -10,4 +10,8 @@
 #submit-button {
   background-color: rgb(110, 27, 187);
   color: white;
+}
+
+header {
+  background-color: rgb(110, 27, 187);
 }

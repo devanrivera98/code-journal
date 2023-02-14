@@ -14,3 +14,7 @@ function addLocalStorage(event) {
   var dataLocalStorage = localStorage.setItem('javascript-local-storage', dataJson);
   return dataLocalStorage;
 }
+
+if (localStorage.getItem('javascript-local-storage')) {
+  data = JSON.parse(localStorage.getItem('javascript-local-storage'));
+}
