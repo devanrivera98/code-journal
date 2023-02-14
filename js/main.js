@@ -8,8 +8,7 @@ function setImage(event) {
 }
 
 var $form = document.querySelector('form');
-// var $title = document.querySelector('input[name=title]');
-// var $notes = document.querySelector('textarea');
+
 $form.addEventListener('submit', setSubmit);
 
 function setSubmit(event) {
@@ -25,4 +24,3 @@ function setSubmit(event) {
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
 }
-// console.log(data.entries);
