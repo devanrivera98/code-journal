@@ -1,0 +1,17 @@
+.main {
+  background-color: #f7f7f7;
+}
+
+#header-h2 {
+  background-color: rgb(110, 27, 187);
+  color: white;
+}
+
+#submit-button {
+  background-color: rgb(110, 27, 187);
+  color: white;
+}
+
+header {
+  background-color: rgb(110, 27, 187);
+}
