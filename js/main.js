@@ -70,3 +70,30 @@ function domContentLoadedFunction() {
     $ul.appendChild(results);
   }
 }
+
+function toggleNoEntries() {
+  var $noEntries = document.querySelector('.no-entries-li');
+  if ($noEntries.classList.contains('hidden')) {
+    $noEntries.classList.remove('hidden');
+  } else {
+    $noEntries.classList.add('hidden');
+  }
+}
+toggleNoEntries();
+
+function viewSwap(name) {
+  var $entryForm = document.querySelector('[data-view="entry-form"]');
+  var $entries = document.querySelector('[data-view="entries"]');
+  if (name === 'entry-form') {
+    $entryForm.classList.remove('hidden');
+  } else {
+    $entryForm.classList.add('hidden');
+  }
+  if (name === 'entries') {
+    $entries.classList.remove('hidden');
+  } else {
+    $entries.classList.add('hidden');
+  }
+  data.view = name;
+}
+viewSwap();
