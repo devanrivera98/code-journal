@@ -97,3 +97,6 @@ function viewSwap(name) {
   data.view = name;
 }
 viewSwap();
+
+var $anchor = document.querySelector('a');
+$anchor.addEventListener('click', viewSwap);

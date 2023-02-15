@@ -23,3 +23,11 @@ ul {
 html {
   font-family: Lato, sans-serif;
 }
+
+a {
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  cursor: pointer;
+}
