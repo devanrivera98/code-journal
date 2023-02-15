@@ -23,6 +23,11 @@ function setSubmit(event) {
   data.entries.unshift($object);
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
+  $ul.appendChild(renderEntry($object));
+  viewSwap('entries');
+  if (data.nextEntryId === 2) {
+    toggleNoEntries();
+  }
 }
 
 function renderEntry(entry) {
@@ -79,7 +84,6 @@ function toggleNoEntries() {
     $noEntries.classList.add('hidden');
   }
 }
-toggleNoEntries();
 
 function viewSwap(name) {
   var $entryForm = document.querySelector('[data-view="entry-form"]');
