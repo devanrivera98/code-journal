@@ -26,39 +26,38 @@ function setSubmit(event) {
 }
 
 function renderEntry(entry) {
+  var $li = document.createElement('li');
+
   var $divOne = document.createElement('div');
   $divOne.setAttribute('class', 'row');
 
   var $divTwo = document.createElement('div');
   $divTwo.setAttribute('class', 'row column-half');
 
-  var $img = document.createElement('img');
-  $img.setAttribute('class', data.entries.url);
+  var $image = document.createElement('img');
+  $image.setAttribute('class', data.entries.url);
 
   var $divThree = document.createElement('div');
-  $divThree.setAttribute('class', 'column-half');
-
-  var $ul = document.createElement('ul');
-
-  var $liOne = document.createElement('li');
-  $liOne.setAttribute('class', 'li-h1');
+  $divThree.setAttribute('class', 'column-half notes');
 
   var $h2 = document.createElement('h2');
+  $h2.setAttribute('class', 'ul-h2');
   $h2.textContent = data.entries.title;
 
-  var $liTwo = document.createElement('li');
-  $liTwo.setAttribute('class', 'li-text');
-  $liTwo.textContent = data.entries.notes;
+  var $paragraph = document.createElement('p');
+  $paragraph.setAttribute('class', 'p-text');
+  $paragraph.textContent = data.entries.notes;
 
+  $li.appendChild($divOne);
   $divOne.appendChild($divTwo);
-  $divTwo.appendChild($img);
+  $divTwo.appendChild($image);
   $divOne.appendChild($divThree);
-  $divThree.appendChild($ul);
-  $ul.appendChild($liOne);
-  $liOne.appendChild($h2);
-  $ul.appendChild($liTwo);
+  $divThree.appendChild($h2);
+  $divThree.appendChild($paragraph);
 
-  return $divOne;
+  return $li;
 }
 renderEntry();
 // entry parameter represents a single object for a single entry from the data.entries array.
+
+// document.addEventListener('DOMContentLoaded', );
