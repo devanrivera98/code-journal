@@ -40,6 +40,11 @@ img {
   padding-bottom: 10px;
 }
 
+.anchor-entry {
+  margin-right: 10px;
+  padding: 5px 7px;
+}
+
 .input-field {
   width: 100%;
   padding: 5px;
@@ -68,6 +73,12 @@ img {
 #submit-button {
   display: flex;
   justify-content: end;
+}
+
+#header-h1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 ul {

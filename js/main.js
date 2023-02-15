@@ -96,7 +96,14 @@ function viewSwap(name) {
   }
   data.view = name;
 }
-viewSwap();
+// viewSwap();
 
 var $anchor = document.querySelector('a');
-$anchor.addEventListener('click', viewSwap);
+$anchor.addEventListener('click', function () {
+  viewSwap('entries');
+});
+
+var $anchorTwo = document.querySelector('.anchor-entry');
+$anchorTwo.addEventListener('click', function () {
+  viewSwap('entry-form');
+});
