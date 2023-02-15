@@ -23,7 +23,7 @@ function setSubmit(event) {
   data.entries.unshift($object);
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
-  $ul.appendChild(renderEntry($object));
+  $ul.prepend(renderEntry($object));
   viewSwap('entries');
   toggleNoEntries();
 
