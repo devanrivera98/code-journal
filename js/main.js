@@ -62,8 +62,6 @@ function renderEntry(entry) {
   return $li;
 }
 
-// entry parameter represents a single object for a single entry from the data.entries array.
-
 document.addEventListener('DOMContentLoaded', domContentLoadedFunction);
 
 var $ul = document.querySelector('ul');
@@ -84,11 +82,6 @@ function toggleNoEntries() {
   } else {
     $noEntries.classList.remove('hidden');
   }
-  // if ($noEntries.classList.contains('hidden')) {
-  //   $noEntries.classList.remove('hidden');
-  // } else (data.entries.length > 1) {
-  //   $noEntries.classList.add('hidden');
-  // }
 }
 
 function viewSwap(name) {
@@ -103,7 +96,6 @@ function viewSwap(name) {
   }
   data.view = name;
 }
-// viewSwap();
 
 var $anchor = document.querySelector('a');
 $anchor.addEventListener('click', function () {
