@@ -31,6 +31,7 @@ function setSubmit(event) {
 
 function renderEntry(entry) {
   var $li = document.createElement('li');
+  $li.setAttribute('data-entry-id', entry.entryId);
 
   var $divOne = document.createElement('div');
   $divOne.setAttribute('class', 'row');
@@ -48,6 +49,9 @@ function renderEntry(entry) {
   $h2.setAttribute('class', 'ul-h2');
   $h2.textContent = entry.title;
 
+  var $pencil = document.createElement('i');
+  $pencil.setAttribute('class', 'fas fa-pencil');
+
   var $paragraph = document.createElement('p');
   $paragraph.setAttribute('class', 'p-text');
   $paragraph.textContent = entry.notes;
@@ -57,6 +61,7 @@ function renderEntry(entry) {
   $divTwo.appendChild($image);
   $divOne.appendChild($divThree);
   $divThree.appendChild($h2);
+  $h2.appendChild($pencil);
   $divThree.appendChild($paragraph);
 
   return $li;
