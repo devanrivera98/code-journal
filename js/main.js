@@ -35,18 +35,18 @@ function renderEntry(entry) {
   $divTwo.setAttribute('class', 'row column-half');
 
   var $image = document.createElement('img');
-  $image.setAttribute('class', data.entries.url);
+  $image.setAttribute('src', entry.url);
 
   var $divThree = document.createElement('div');
   $divThree.setAttribute('class', 'column-half notes');
 
   var $h2 = document.createElement('h2');
   $h2.setAttribute('class', 'ul-h2');
-  $h2.textContent = data.entries.title;
+  $h2.textContent = entry.title;
 
   var $paragraph = document.createElement('p');
   $paragraph.setAttribute('class', 'p-text');
-  $paragraph.textContent = data.entries.notes;
+  $paragraph.textContent = entry.notes;
 
   $li.appendChild($divOne);
   $divOne.appendChild($divTwo);
@@ -57,7 +57,16 @@ function renderEntry(entry) {
 
   return $li;
 }
-renderEntry();
+
 // entry parameter represents a single object for a single entry from the data.entries array.
 
-// document.addEventListener('DOMContentLoaded', );
+document.addEventListener('DOMContentLoaded', domContentLoadedFunction);
+
+var $ul = document.querySelector('ul');
+
+function domContentLoadedFunction() {
+  for (var i = 0; i < data.entries.length; i++) {
+    var results = renderEntry(data.entries[i]);
+    $ul.appendChild(results);
+  }
+}
