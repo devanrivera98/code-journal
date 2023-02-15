@@ -11,6 +11,9 @@
     integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -18,12 +21,16 @@
 <body>
   <header>
     <div class="container">
-      <h2 class="row column-row" id="header-h2" >Code Journal</h2>
+      <div class="row">
+        <h2 class="row column-row" id="header-h2" >Code Journal</h2>
+        <a class="row column-row">Entries</a>
+      </div>
     </div>
   </header>
   <main class="container">
     <div class="row column-full" id="header-h1">
-      <h1>New Entry</h1>
+      <h1>Entries</h1>
+      <a class="row anchor-entry">NEW</a>
     </div>
     <div data-view="entry-form">
       <form>
@@ -60,7 +67,11 @@
         </div>
       </form>
     </div>
-    <div data-view="entries" class="hidden"></div>
+    <div data-view="entries" class="hidden">
+      <ul>
+        <li class="no-entries-li">No entries have been recorded</li>
+      </ul>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
