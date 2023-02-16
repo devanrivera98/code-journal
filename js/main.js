@@ -21,14 +21,24 @@ function setSubmit(event) {
     notes: $form.elements.notes.value,
     entryId: data.nextEntryId
   };
-  data.nextEntryId++;
-  data.entries.unshift($object);
-  $img.setAttribute('src', 'images/placeholder-image-square.jpg');
-  $form.reset();
-  $ul.prepend(renderEntry($object));
-  viewSwap('entries');
-  toggleNoEntries();
-
+  if (data.editing === null) {
+    data.nextEntryId++;
+    data.entries.unshift($object);
+    $img.setAttribute('src', 'images/placeholder-image-square.jpg');
+    $form.reset();
+    $ul.prepend(renderEntry($object));
+    viewSwap('entries');
+    toggleNoEntries();
+  } else {
+    $object.entryId = data.editing.entryId;
+    // console.log($object.entryId);
+    for (var i = 0; i < data.entries.length; i++) {
+      if (data.entries[i].entryId === $object.entryId) {
+        data.entries.splice(i, 1, $object);
+      }
+    }
+  }
+  // console.log(data.entries);
 }
 
 function renderEntry(entry) {
