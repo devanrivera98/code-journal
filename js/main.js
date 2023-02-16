@@ -1,5 +1,7 @@
 var $photoUrl = document.querySelector('input[name=photo]');
 var $img = document.querySelector('img');
+var $title = document.querySelector('.input-field');
+var $textArea = document.querySelector('textarea');
 
 $photoUrl.addEventListener('input', setImage);
 
@@ -111,3 +113,20 @@ var $anchorTwo = document.querySelector('.anchor-entry');
 $anchorTwo.addEventListener('click', function () {
   viewSwap('entry-form');
 });
+
+$ul.addEventListener('click', ifPencilClicked);
+
+function ifPencilClicked(event) {
+  viewSwap('entry-form');
+  for (var i = 0; i < data.entries.length; i++) {
+    if (data.entries[i].entryId.toString() === event.target.closest('li').getAttribute('data-entry-id')) {
+      data.editing = data.entries[i];
+      var $headerH1 = document.querySelector('h1');
+      $headerH1.textContent = 'Edit Entry';
+      $img.setAttribute('src', data.editing.url);
+      $title.value = data.editing.title;
+      $photoUrl.value = data.editing.url;
+      $textArea.value = data.editing.notes;
+    }
+  }
+}
