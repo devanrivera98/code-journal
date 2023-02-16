@@ -27,7 +27,6 @@ function setSubmit(event) {
     $img.setAttribute('src', 'images/placeholder-image-square.jpg');
     $form.reset();
     $ul.prepend(renderEntry($object));
-    viewSwap('entries');
     toggleNoEntries();
   } else {
     $object.entryId = data.editing.entryId;
@@ -37,8 +36,19 @@ function setSubmit(event) {
         data.entries.splice(i, 1, $object);
       }
     }
+    var $liAll = document.querySelectorAll('li');
+    for (var j = 0; j < $liAll.length; j++) {
+      if (Number($liAll[j].dataset.entryId) === $object.entryId) {
+        $liAll[j].replaceWith(renderEntry($object));
+      }
+    }
+    // console.log('value of $object.entryId', $object.entryId);
+    // console.log('value of $liAll[1].dataset', $liAll[1].dataset);
+    // console.log(li);
+    // if new data entry=i is the same as the previous data entry with the same id# replace the previous li with this one
   }
   // console.log(data.entries);
+  viewSwap('entries');
 }
 
 function renderEntry(entry) {
