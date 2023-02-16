@@ -42,13 +42,12 @@ function setSubmit(event) {
         $liAll[j].replaceWith(renderEntry($object));
       }
     }
-    // console.log('value of $object.entryId', $object.entryId);
-    // console.log('value of $liAll[1].dataset', $liAll[1].dataset);
-    // console.log(li);
-    // if new data entry=i is the same as the previous data entry with the same id# replace the previous li with this one
   }
   // console.log(data.entries);
   viewSwap('entries');
+  var $H1 = document.querySelector('h1');
+  $H1.textContent = 'New Entry';
+  data.editing = null;
 }
 
 function renderEntry(entry) {
