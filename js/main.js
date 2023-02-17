@@ -30,7 +30,6 @@ function setSubmit(event) {
     toggleNoEntries();
   } else {
     $object.entryId = data.editing.entryId;
-    // console.log($object.entryId);
     for (var i = 0; i < data.entries.length; i++) {
       if (data.entries[i].entryId === $object.entryId) {
         data.entries.splice(i, 1, $object);
@@ -43,7 +42,6 @@ function setSubmit(event) {
       }
     }
   }
-  // console.log(data.entries);
   viewSwap('entries');
   var $H1 = document.querySelector('h1');
   $H1.textContent = 'New Entry';
