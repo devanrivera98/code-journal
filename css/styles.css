@@ -44,3 +44,9 @@ a {
 i {
   color: rgb(110, 27, 187);
 }
+
+button {
+  border: none;
+  color: red;
+  text-decoration-line: underline;
+}

@@ -140,6 +140,8 @@ function ifPencilClicked(event) {
       data.editing = data.entries[i];
       var $headerH1 = document.querySelector('h1');
       $headerH1.textContent = 'Edit Entry';
+      var $button = document.querySelector('button');
+      $button.classList.remove('hidden');
       $img.setAttribute('src', data.editing.url);
       $title.value = data.editing.title;
       $photoUrl.value = data.editing.url;

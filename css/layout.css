@@ -23,6 +23,10 @@ h2 {
   margin: 0;
 }
 
+button {
+  margin-left: 3px;
+}
+
 h1 {
   margin: 0;
   padding-top: 10px;
@@ -56,8 +60,9 @@ img {
 .submit-row {
   display: flex;
   flex-wrap: wrap;
+  margin-left: 13px;
   padding: 0.5rem;
-  justify-content: end;
+  justify-content: space-between;
 }
 
 .notes {
@@ -77,6 +82,7 @@ img {
 #submit-button {
   display: flex;
   justify-content: end;
+  margin-right: 10px;
 }
 
 #header-h1 {
