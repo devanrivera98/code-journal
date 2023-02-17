@@ -50,3 +50,12 @@ button {
   color: red;
   text-decoration-line: underline;
 }
+
+.section-on {
+  background-color: rgb(0 0 0 / 80%);
+  position: fixed;
+}
+
+.pop-up {
+  background-color: white;
+}
