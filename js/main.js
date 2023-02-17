@@ -25,7 +25,6 @@ function setSubmit(event) {
     data.nextEntryId++;
     data.entries.unshift($object);
     $img.setAttribute('src', 'images/placeholder-image-square.jpg');
-    $form.reset();
     $ul.prepend(renderEntry($object));
     toggleNoEntries();
   } else {
@@ -43,6 +42,7 @@ function setSubmit(event) {
     }
   }
   viewSwap('entries');
+  $form.reset();
   var $H1 = document.querySelector('h1');
   $H1.textContent = 'New Entry';
   data.editing = null;
