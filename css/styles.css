@@ -45,10 +45,27 @@ i {
   color: rgb(110, 27, 187);
 }
 
-button {
+.delete-button {
   border: none;
   color: red;
   text-decoration-line: underline;
+}
+
+.cancel-button {
+  background-color: rgb(208, 203, 203);
+  border: none;
+  border-radius: 10%;
+  font-size: 18px;
+  padding: 0.3rem;
+}
+
+.confirm-button {
+  background-color: rgb(217, 49, 49);
+  color: white;
+  border: none;
+  border-radius: 10%;
+  font-size: 18px;
+  padding: 0.3rem;
 }
 
 .section-on {

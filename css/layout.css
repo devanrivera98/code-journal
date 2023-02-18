@@ -95,6 +95,10 @@ img {
   right: 0;
 }
 
+.hide-delete {
+  display: none;
+}
+
 .pop-up {
   display: block;
   justify-content: center;

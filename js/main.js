@@ -2,6 +2,8 @@ var $photoUrl = document.querySelector('input[name=photo]');
 var $img = document.querySelector('img');
 var $title = document.querySelector('.input-field');
 var $textArea = document.querySelector('textarea');
+var $deleteButton = document.querySelector('.delete-button');
+var $sectionOff = document.querySelector('.section-off');
 
 $photoUrl.addEventListener('input', setImage);
 
@@ -114,6 +116,7 @@ function viewSwap(name) {
   if (name === 'entry-form') {
     $entryForm.classList.remove('hidden');
     $entries.classList.add('hidden');
+    $deleteButton.classList.add('hide-delete');
   } else {
     $entryForm.classList.add('hidden');
     $entries.classList.remove('hidden');
@@ -146,6 +149,16 @@ function ifPencilClicked(event) {
       $title.value = data.editing.title;
       $photoUrl.value = data.editing.url;
       $textArea.value = data.editing.notes;
+      $deleteButton.classList.remove('hide-delete');
     }
+  }
+}
+
+$deleteButton.addEventListener('click', buttons);
+
+function buttons(event) {
+  event.preventDefault();
+  if ($deleteButton.className) {
+    $sectionOff.className = 'section-on';
   }
 }
