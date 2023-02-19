@@ -154,11 +154,20 @@ function ifPencilClicked(event) {
   }
 }
 
-$deleteButton.addEventListener('click', buttons);
+$deleteButton.addEventListener('click', Buttons);
 
-function buttons(event) {
+function Buttons(event) {
   event.preventDefault();
   if ($deleteButton.className) {
     $sectionOff.className = 'section-on';
+  }
+}
+
+var $cancelButton = document.querySelector('.cancel-button');
+$cancelButton.addEventListener('click', cancelFunction);
+
+function cancelFunction() {
+  if ($cancelButton) {
+    $sectionOff.className = 'section-off';
   }
 }
