@@ -171,3 +171,32 @@ function cancelFunction() {
     $sectionOff.className = 'section-off';
   }
 }
+
+// var $confirmButton = document.querySelector('.confirm-button');
+// $confirmButton.addEventListener('click', confirmFunction);
+
+// function confirmFunction() {
+//   var $liAll = document.querySelectorAll('[data-entry-id');
+// data-entry-id or li for selector all
+// console.log($liAll[1].dataset.entryId);
+// console.log(data.entries[1].entryId);
+// if ($confirmButton) {
+//   $sectionOff.className = 'section-off';
+//   for (var i = 0; i < data.entries.length; i++) {
+//     for (var j = 0; i < $liAll.length; j++) {
+//       if (data.entries[i].entryId === Number($liAll[j].dataset.entryId)) {
+//         console.log(data.entries.splice(i, 1));
+//         return data.entries.splice(i, 1);
+//       }
+//     }
+//   }
+// }
+// }
+
+// console.log(data.entries);
+// this for loop will always match with its data entry and that is why it deleted all the entries ???
+
+// viewswap will not work in my confirmfunction
+// if I delete an entry and then try to add another one after it that new one will not be saved
+// the 2nd one after will be saved though
+// if I click on the individual li will it give me its data type
