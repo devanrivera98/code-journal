@@ -183,6 +183,7 @@ function confirmFunction() {
   $sectionOff.className = 'section-off';
   for (var i = 0; i < data.entries.length; i++) {
     if (data.entries[i].entryId === Number(data.editing.entryId)) {
+      // console.log(data.editing.entryId);
       data.entries.splice(i, 1);
       $ul.removeChild($liAll[i]);
     }
