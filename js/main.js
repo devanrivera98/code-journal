@@ -4,6 +4,7 @@ var $title = document.querySelector('.input-field');
 var $textArea = document.querySelector('textarea');
 var $deleteButton = document.querySelector('.delete-button');
 var $sectionOff = document.querySelector('.section-off');
+var $headerH1 = document.querySelector('h1');
 
 $photoUrl.addEventListener('input', setImage);
 
@@ -46,7 +47,7 @@ function setSubmit(event) {
   viewSwap('entries');
   $form.reset();
   var $H1 = document.querySelector('h1');
-  $H1.textContent = 'New Entry';
+  $H1.textContent = 'Entries';
   data.editing = null;
 }
 
@@ -126,11 +127,13 @@ function viewSwap(name) {
 
 var $anchor = document.querySelector('a');
 $anchor.addEventListener('click', function () {
+  $headerH1.textContent = 'Entries';
   viewSwap('entries');
 });
 
 var $anchorTwo = document.querySelector('.anchor-entry');
 $anchorTwo.addEventListener('click', function () {
+  $headerH1.textContent = 'New Entry';
   viewSwap('entry-form');
 });
 
@@ -141,7 +144,6 @@ function ifPencilClicked(event) {
   for (var i = 0; i < data.entries.length; i++) {
     if (data.entries[i].entryId.toString() === event.target.closest('li').getAttribute('data-entry-id')) {
       data.editing = data.entries[i];
-      var $headerH1 = document.querySelector('h1');
       $headerH1.textContent = 'Edit Entry';
       var $button = document.querySelector('button');
       $button.classList.remove('hidden');
@@ -172,31 +174,21 @@ function cancelFunction() {
   }
 }
 
-// var $confirmButton = document.querySelector('.confirm-button');
-// $confirmButton.addEventListener('click', confirmFunction);
+var $confirmButton = document.querySelector('.confirm-button');
+$confirmButton.addEventListener('click', confirmFunction);
 
-// function confirmFunction() {
-//   var $liAll = document.querySelectorAll('[data-entry-id');
-// data-entry-id or li for selector all
-// console.log($liAll[1].dataset.entryId);
-// console.log(data.entries[1].entryId);
-// if ($confirmButton) {
-//   $sectionOff.className = 'section-off';
-//   for (var i = 0; i < data.entries.length; i++) {
-//     for (var j = 0; i < $liAll.length; j++) {
-//       if (data.entries[i].entryId === Number($liAll[j].dataset.entryId)) {
-//         console.log(data.entries.splice(i, 1));
-//         return data.entries.splice(i, 1);
-//       }
-//     }
-//   }
-// }
-// }
-
-// console.log(data.entries);
-// this for loop will always match with its data entry and that is why it deleted all the entries ???
-
-// viewswap will not work in my confirmfunction
-// if I delete an entry and then try to add another one after it that new one will not be saved
-// the 2nd one after will be saved though
-// if I click on the individual li will it give me its data type
+function confirmFunction() {
+  var $ul = document.querySelector('ul');
+  var $liAll = document.querySelectorAll('li');
+  $sectionOff.className = 'section-off';
+  for (var i = 0; i < data.entries.length; i++) {
+    if (data.entries[i].entryId === Number(data.editing.entryId)) {
+      data.entries.splice(i, 1);
+      $ul.removeChild($liAll[i]);
+    }
+  }
+  data.editing = null;
+  viewSwap('entries');
+  $headerH1.textContent = 'Entries';
+  toggleNoEntries();
+}
