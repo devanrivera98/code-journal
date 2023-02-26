@@ -188,8 +188,8 @@ function confirmFunction() {
       $ul.removeChild($liAll[i]);
     }
   }
-  data.editing = null;
   viewSwap('entries');
   $headerH1.textContent = 'Entries';
   toggleNoEntries();
+  data.editing = null;
 }
