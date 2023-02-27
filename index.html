@@ -27,6 +27,17 @@
       </div>
     </div>
   </header>
+  <section class="section-off">
+    <div>
+      <div class="pop-up row">
+        <p class="row"><strong>Are you sure you want to delete this entry</strong></p>
+        <div class="row pop-up-text">
+          <button class="cancel-button">CANCEL</button>
+          <button class="confirm-button">CONFIRM</button>
+        </div>
+      </div>
+    </div>
+  </section>
   <main class="container">
     <div class="row column-full" id="header-h1">
       <h1>Entries</h1>
@@ -58,11 +69,11 @@
             <label for="notes">Notes</label>
           </div>
           <div class="row">
-            <textarea class="input-field" name="notes" placeholder="Notes Here" rows="7" required>
-            </textarea>
+            <textarea class="input-field" name="notes" rows="7" required></textarea>
           </div>
         </div>
-        <div class="submit-row">
+        <div class="submit-row column-full row">
+          <button class="delete-button hide-delete">Delete Entry</button>
           <input id="submit-button" type="submit" name="submit" value="Save">
         </div>
       </form>
